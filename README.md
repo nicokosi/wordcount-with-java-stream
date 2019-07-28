@@ -2,11 +2,11 @@ Count words from a file
 
 # Prerequisite
 
-Install Maven and Java 8.
+Install Java 8.
 
 # Build
 
-    mvn compile
+    ./mvnw compile
 
 # Run
 
