@@ -27,6 +27,7 @@ public class WordCount {
         return Files.lines(Paths.get(filePath))
                 .map(line -> line.split("\\s+"))
                 .flatMap(Arrays::stream)
+                .map(String::toLowerCase)
                 .distinct()
                 .count();
     }
