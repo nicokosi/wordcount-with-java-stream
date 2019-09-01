@@ -1,14 +1,18 @@
-Count words from a file
+# `wordcount-with-java-stream`
 
-# Prerequisite
+A command-line interface that counts distinct words from a file.
+
+## Prerequisite
 
 Install Java 8.
 
-# Build
+## Build
 
     ./mvnw compile
 
-# Run
+## Run
+
+### Run as a Java program
 
     # On a small text file
     java -cp target/classes org.nicokosi.WordCount /etc/hosts
@@ -19,24 +23,11 @@ Install Java 8.
         http://www.gutenberg.org/cache/epub/20417/pg20417.txt
     java -cp target/classes org.nicokosi.WordCount /tmp/pg20417.txt
 
-# Run as an executable
+### Run as an executable
 
-Install [GraalVM](https://www.graalvm.org/), for instance via [SDKMAN!](https://sdkman.io/):
+Run the script `./generate-executable.sh` that installs [GraalVM](https://www.graalvm.org/) via [SDKMAN!](https://sdkman.io/) then generates an executable named `wordcount-with-java-stream`.
+Then, run:
 
-    curl --silent "https://get.sdkman.io" | bash || echo 'SDKMAN! already installed'
-    source "$HOME/.sdkman/bin/sdkman-init.sh"
-    sdk use java 19.1.1-grl # Newer versions can be found via `sdk list java`
-
-Then generate an executable:
-
-    gu install native-image
-    native-image \
-        --no-fallback \
-        --no-server \
-        -cp target/classes \
-        org.nicokosi.WordCount \
-        wordcount-with-java-stream
-
-And run it:
-
-    ./wordcount-with-java-stream /etc/hosts
+    ```sh
+    ./wordcount-with-java-stream PATH_OF_A_TEXT_FILE
+    ```
