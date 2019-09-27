@@ -8,7 +8,7 @@ Install Java 8.
 
 ## Build
 
-    ./mvnw compile
+    ./mvnw verify
 
 ## Run
 
